@@ -356,7 +356,7 @@ section {
     left: 50%;
     transform: translateX(-50%);
     border-width: 0 20px 20px;
-    border-color: transparent transparent #f1f1f1 transparent;
+    border-color: transparent transparent #f4f4f4 transparent;
     border-style: solid;
 }
 
@@ -411,7 +411,7 @@ section {
 }
 
 .expand-content {
-    background-color: #f1f1f1;
+    background-color: #f4f4f4;
 }
 
 .expand-pane {
@@ -464,7 +464,7 @@ section {
 }
 
 .work-carousel-wrap {
-    background-color: rgb(156, 192, 225, 0.4);
+    background-color: #eaeaea;
     position: relative;
 }
 
@@ -511,7 +511,7 @@ section {
 }
 
 .work-carousel .owl-nav button[class*=owl].disabled {
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 .work-carousel .owl-nav .owl-prev {
@@ -538,7 +538,7 @@ section {
     width: 20px;
     height: 2px;
     margin: 0 4px;
-    background: #ddd;
+    background: #ccc;
     border-radius: 0;
 }
 
@@ -716,7 +716,7 @@ section {
     }
     
     .expand-pane {
-        padding: 60px 15px 30px;
+        padding: 60px 15px;
     }
     
     .expand-pane.active {

@@ -142,7 +142,7 @@ section {
 
 .banner .content .banner-title {
     font-size: 5rem;
-    font-family: 'Helvetica Neue', 'Noto Sans TC', '微软雅黑', 'Microsoft YaHei', sans-serif;
+    font-family: 'Lato', 'Noto Sans TC', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 900;
     line-height: 1.2;
     color: #9FC2E2;
@@ -189,7 +189,7 @@ section {
 .watermark {
     opacity: 0.2;
     color: #9FC2E2;
-    font-family: 'Helvetica Neue', 'Noto Sans TC', '微软雅黑', 'Microsoft YaHei', sans-serif;
+    font-family: 'Lato', 'Noto Sans TC', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-size: 7rem;
     font-weight: 900;
     white-space: nowrap;
@@ -220,9 +220,9 @@ section {
 
 .skill-section .sub-title {
     margin: 30px 0;
-    font-family: 'Helvetica Neue', 'Noto Sans TC', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-size: 2.4rem;
-    font-weight: 600;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
     font-style: oblique;
 }
 
@@ -547,12 +547,21 @@ section {
 }
 
 @media (max-width: 767px) {
+    body.menu-open {
+        overflow: hidden;
+    }
+
     header.fix {
         padding: 10px 0;
     }
 
     header .logo {
         width: 80px;
+        display: none;
+    }
+
+    header.fix .logo {
+        display: block;
     }
 
     .mobile-menu,
@@ -572,6 +581,7 @@ section {
         top: 10px;
         right: 10px;
         z-index: 999;
+        color: #333;
     }
 
     header.fix .mobile-menu {
@@ -595,12 +605,12 @@ section {
         box-shadow: 0 5px 20px rgba(0,0,0,0,15);
         opacity: 0;
         visibility: hidden;
-        transition: .3s;
     }
 
     ul.header-menu.active {
         opacity: 1;
         visibility: visible;
+        transition: .3s;
     }
 
     ul.header-menu>li {
@@ -613,6 +623,15 @@ section {
         padding: 20px;
         font-size: 10vw;
         color: #333;
+        font-weight: 700;
+        transform: scale(0.8);
+        opacity: 0;
+        transition-delay: 0.1s;
+    }
+
+    ul.header-menu.active>li>a {
+        transform: scale(1);
+        opacity: 1;
     }
 
     ul.header-menu>li>a:after {
@@ -635,10 +654,8 @@ section {
     }
 
     .banner .content {
-        top: auto;
-        bottom: 40px;
+        top: 40px;
         transform: none;
-        padding-bottom: 0;
     }
     
     .banner .content .banner-title {

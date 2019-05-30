@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>About LIN PEI ZHEN</title>
+	
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/webfont.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $(window).on('scroll load resize', function () {
+				var scrollTop = $(window).scrollTop();
+				var windowWidth = $(window).width();
+                var windowHeight = $(window).height();
+                var windowBtmScroll = scrollTop + windowHeight;
+                var header = $('header');
+                var bannerHeight = $('.banner').outerHeight();
+
+                if (scrollTop > bannerHeight) {
+                    header.addClass('fix');
+                } else {
+                    header.removeClass('fix');
+				}
+				
+				var skillSec = $('.skill-section');
+				var skillOffset = skillSec.offset().top;
+				var skillHeight = skillSec.height();
+				var bar = skillSec.find('.progress-bar');
+
+				if (windowBtmScroll > skillOffset + 80 && scrollTop < skillOffset + skillHeight) {
+					bar.each(function() {
+						var barWidth = $(this).attr('data-width');
+
+						$(this).css('width', barWidth);
+					});
+				} else {
+					bar.css('width', 0);
+				}
+
+				if(windowWidth < 768) {
+					$('.parallax-item, .section-img, .content').removeAttr('style');
+					return;
+				} else {
+					// Parallax
+					$('.parallax-item').each(function() {
+						var scrollTop = $(window).scrollTop();
+						var parallaxItem = $(this);
+						var dataPercent = parallaxItem.attr('data-scroll-percent')
+						var OffsetTop = parallaxItem.offset().top;
+						var scrollPercent = (OffsetTop - scrollTop) / dataPercent;
+						
+						parallaxItem.css('transform', 'translateY(' + scrollPercent + 'px)');
+					});
+
+					$('.section-img, .content').each(function() {
+						var scrollTop = $(window).scrollTop();
+						var windowHeight = $(window).height();
+						var imgOffset = $(this).offset().top;
+						var imgHeight = $(this).outerHeight();
+						var comePercent = (windowBtmScroll - imgOffset) * 1.5 / imgHeight; // 在滑出 66.7% 的區塊時就變成 opacity 1
+						var outPercent = (imgHeight + imgOffset - scrollTop) / imgHeight;
+
+						if (windowBtmScroll < imgOffset + 40) {
+							$(this).css('opacity', 0);
+						} else if (windowBtmScroll > imgOffset + 40 && scrollTop < imgOffset + imgHeight / 2) {
+							$(this).css('opacity', comePercent);
+						} else if (scrollTop > (imgOffset + imgHeight - imgHeight) / 2 && scrollTop < imgOffset + imgHeight) {
+							$(this).css('opacity', outPercent);
+						} else if (scrollTop > imgOffset + imgHeight) {
+							$(this).css('opacity', 0);
+						}
+					});
+				}
+			});
+		});
+		
+		function openMenu() {
+			$('.header-menu').toggleClass('active');
+		}
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="about.html">
+                    <img class="logo" src="img/logo.svg" alt="">
+                </a>
+                <ul class="header-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="work.html">Works</a></li>
+				</ul>
+				<a href="javascript:;" class="mobile-menu d-block d-sm-block d-md-none" onclick="openMenu();"><i class="icon-menu"></i></a>
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="container">
+                <div class="banner-title">
+                    <span>Hello!</span>
+                </div>
+                <div class="banner-title">
+                    <span>My name is <span class="name">LIN PEI ZHEN</span></span>
+                </div>
+                <div class="banner-title">
+                    <span>I'm a UI designer</span>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 order-md-12">
+                    <div class="content">
+                        <h2 class="section-title">Designer</h2>
+                        <p>2015 年大三時開始以平面設計為志向，在畢業前夕得到一個實習機會，從此正式踏上設計的道路。</p>
+                        <p>在短短的平面設計生涯中，幸運地遇到到一位主管教會我 HTML 和 CSS，讓我轉職成為一名 UI 設計師，我也從此愛上 coding。</p>
+                        <p>後來我還參與了許多不同介面的專案，例如後台網站、 App 和 Email 等等，也常和團隊成員討論設計，讓我發展出更多元的設計能力。</p>
+                    </div>
+                </div>
+                <div class="col-md-7 order-md-1">
+                    <div class="section-img web-img">
+                        <div class="row">
+                            <div class="col-10">
+                                <img src="img/about/kkday02.jpg" alt="" class="img-fluid">
+                            </div>
+                        
+                            <div class="col-10 offset-1">
+                                <img src="img/about/kkday01.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-10 offset-2">
+                                <img src="img/about/portfolio.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="watermark parallax-item" data-scroll-percent="6">Web Design</div>
+                    </div>
+                    <div class="section-img app-img">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="img/about/app01.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-4">
+                                <img src="img/about/app02.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-4">
+                                <img src="img/about/app03.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="watermark parallax-item" data-scroll-percent="6">App Design</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skill-section">
+        <div class="container">
+            <div class="watermark parallax-item text-center" data-scroll-percent="5">Skills</div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="sub-title">Coding skills</div>
+					<div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">HTML5</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="90%"></div>
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">CSS3</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="90%"></div>
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">RWD</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="90%"></div>
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">JacaScript</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="55%"></div>
+                            </div>
+						</div>
+					</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sub-title">Design skills</div>
+                    <div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">Sketch</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="90%"></div>
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">Illustrator</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="80%"></div>
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">Photoshop</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="70%"></div>
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">Photography</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="90%"></div>
+                            </div>
+						</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sub-title">Languages</div>
+                    <div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">English</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="65%"></div>
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">Korean</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="80%"></div>
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 order-sm-12">
+                            <div class="skill-title">Japanese</div>
+                        </div>
+						<div class="col-sm-8">
+                            <div class="progress">
+                                <div class="progress-bar" data-width="80%"></div>
+                            </div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="content">
+                        <h2 class="section-title">Hiker</h2>
+                        <p class="desc">第一次踏入高山時，受雨水和高山症折磨了三天，在第四天要下山時一切好轉，雖然整個過程很痛苦，但山上的美景讓我從此愛上爬山。開始爬高山之後，也才發現台灣擁有的高山和大海有多珍貴，真的是很美也很特別的島嶼。</p>
+						<p class="desc">不管是走在樹林裡或是走在碎石坡，爬山時的每一步都很專注，沒有任何一刻是分心的，很喜歡這樣專心只做一件事，只專注在自己的呼吸的感覺。</p>
+                        <p class="desc">後來隨著朋友的帶領，進入了攀岩的世界，更精準的詞是「抱石」，是一種在室內進行的無繩索攀岩活動。抱石會運動到全身的肌肉，對爬山的表現也很有幫助。</p>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="section-img hike-img">
+                        <div class="row">
+                            <div class="col-8 offset-1">
+                                <img src="img/about/hike01.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-5">
+                                <img src="img/about/hike02.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-7">
+								<img src="img/about/hike03.jpg" alt="" class="img-fluid">
+								<img src="img/about/hike04.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="watermark parallax-item" data-scroll-percent="6">Hiking</div>
+                    </div>
+                    <div class="section-img climb-img">
+                        <div class="row">
+                            <div class="col-8">
+                                <img src="img/about/climb01.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-4">
+                                <img src="img/about/climb03.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-7 offset-5">
+                                <img src="img/about/climb02.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="watermark parallax-item" data-scroll-percent="6">Bouldering</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section photo-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="content">
+                        <h2 class="section-title">Photographer</h2>
+                        <p class="desc">我平時很喜歡拍照，大學時在朋友推薦下開始玩底片，第一卷底片洗出來後就愛上底片的質感。底片拍出來的照片有一種數位模仿不來的溫度和質感，會讓照片中的人事物變得更生動。</p>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<div class="container-fluid">
+            <div class="watermark parallax-item" data-scroll-percent="6">Film Photography</div>
+			<div class="photo-wall section-img">
+				<div class="row">
+					<div class="col-12 col-md-2">
+						<div class="photo-wall-item" style="background-image: url(img/film/film11.jpg)"></div>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="photo-wall-item" style="background-image: url(img/film/film6.jpg)"></div>
+					</div>
+					<div class="col-6 col-md-2">
+						<div class="photo-wall-item" style="background-image: url(img/film/film12.jpg)"></div>
+					</div>
+					<div class="col-12 col-md-3">
+						<div class="photo-wall-item" style="background-image: url(img/film/film2.jpg)"></div>
+					</div>
+					<div class="col-6 col-md-2">
+						<div class="photo-wall-item" style="background-image: url(img/film/film16.jpg)"></div>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="photo-wall-item" style="background-image: url(img/film/film1.jpg)"></div>
+					</div>
+					<div class="col-12 col-md-2">
+						<div class="photo-wall-item" style="background-image: url(img/film/film18.jpg)"></div>
+					</div>
+					<div class="col-6 col-md-4">
+						<div class="photo-wall-item" style="background-image: url(img/film/film4.jpg)"></div>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="photo-wall-item" style="background-image: url(img/film/film10.jpg)"></div>
+					</div>
+				</div>
+			</div>
+        </div>
+	</section>
+	
+	<section class="intro-section contact-section">
+		<div class="container">
+			<div class="content text-center">
+				<h2 class="section-title">Contact</h2>
+				<ul class="list-unstyled">
+					<li class="desc">
+						<i class="icon-envelope"></i> 
+						Email: ale821127@gmail.com
+					</li>
+					<li class="desc">
+						<i class="icon-phone"></i> 
+						Phone: +886 987682637
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+    <footer>
+        <div class="container">
+			<div class="copyright">Made with ❤ in Taiwan</div>
+        </div>
+    </footer>
+</body>
+
+</html>

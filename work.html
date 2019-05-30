@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Works of LIN PEI-ZHEN</title>
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/webfont.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+        $(function () {
+            $(window).on('scroll load resize', function () {
+                var scrollTop = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                var windowBtmScroll = scrollTop + windowHeight;
+                var header = $('header');
+                var bannerHeight = $('.banner').outerHeight();
+
+                // Parallax
+                $('.parallax-item').each(function () {
+                    var scrollTop = $(window).scrollTop();
+                    var parallaxItem = $(this);
+                    var dataPercent = parallaxItem.attr('data-scroll-percent')
+                    var OffsetTop = parallaxItem.offset().top;
+                    var scrollPercent = (OffsetTop - scrollTop) / dataPercent;
+
+                    parallaxItem.css('transform', 'translateY(' + scrollPercent + 'px)');
+                });
+
+            });
+
+            $('[data-toggle=expand]').on('click', function () {
+                var card = $(this).closest('.card');
+                var otherCard = $('.card.active');
+                var targetPaneId = $(this).attr('href');
+                var targetPane = $(targetPaneId);
+                var otherPane = targetPane.siblings('.expand-pane');
+                var expandContent = targetPane.closest('.expand-content');
+                var isOpen = expandContent.hasClass('open');
+                var expandRow = expandContent.closest('.expand-row');
+                var otherContent = expandRow.siblings('.expand-row').find('.expand-content');
+                var otherContentIsOpen = otherContent.hasClass('open');
+
+                event.preventDefault();
+                expandContent.stop();
+
+                // 父層 content 已打開
+                if (isOpen) {
+                    // 卡片對應的 pane 已顯示，關閉 content
+                    if (targetPane.hasClass('active')) {
+                        expandContent.removeClass('open').slideUp(function() {
+                            targetPane.removeClass('active');
+                            card.removeClass('active');
+                        });
+                        console.log('1')
+                    // 卡片對應的 pane 未顯示，顯示對應的 pane 並關閉其他已打開的 pane
+                    } else {
+                        targetPane.addClass('active');
+                        otherPane.removeClass('active');
+                        card.addClass('active');
+                        otherCard.removeClass('active');
+                        console.log('2')
+                    }
+                // 父層 content 未打開
+                } else {
+                    // 有其他 content 已經打開，先關閉其他 content
+                    if (otherContentIsOpen) {
+                        otherContent.removeClass('open').slideUp();
+                        otherContent.find('.expand-pane').removeClass('active');
+                        targetPane.addClass('active');
+                        expandContent.addClass('open').slideDown();
+                        otherCard.removeClass('active');
+                        card.addClass('active');
+                        console.log('3')
+                    // 沒有其他 content 開著，直接打開對應的 content
+                    } else {
+                        targetPane.addClass('active');
+                        expandContent.addClass('open').slideDown();
+                        card.addClass('active');
+                        console.log('4')
+                    }
+                }
+            });
+
+            $('.expand-pane .close').on('click', function() {
+                var closeBtn = $(this);
+                
+                closeBtn.closest('.expand-content').removeClass('open').slideUp(function() {
+                    $('.card').removeClass('active');
+                    closeBtn.closest('.expand-pane').removeClass('active'); 
+                });
+            })
+
+            var workCarousel = $('.work-carousel');
+            workCarousel.owlCarousel({
+                items: 1,
+                nav: true,
+                navText: ['<i class="icon-arrow-left"></i>', '<i class="icon-arrow-right"></i>'],
+                loop: true
+            });
+        });
+
+        function openMenu() {
+			$('.header-menu').toggleClass('active');
+		}
+    </script>
+</head>
+
+<body>
+    <header class="fix">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="about.html">
+                    <img class="logo" src="img/logo.svg" alt="">
+                </a>
+                <ul class="header-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="work.html">Works</a></li>
+				</ul>
+				<a href="javascript:;" class="mobile-menu d-block d-sm-block d-md-none" onclick="openMenu();"><i class="icon-menu"></i></a>
+            </div>
+        </div>
+    </header>
+    <section class="work-section">
+        <div class="container">
+            <div class="watermark text-center">Works</div>
+            </div>
+            <div class="expand-row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#peizhen" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/peizhen.jpg)"></div>
+                                        <img src="img/work/peizhen01.jpg" alt="">
+                                    </div>
+                                    <div class="title">LIN PEI ZHEN Portfolio</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#kk_web" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/kk_web.jpg)"></div>
+                                        <img src="img/work/kk_web.jpg" alt="">
+                                    </div>
+                                    <div class="title">KKday Official Website (Desktop)</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#kk_app" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/kk_app.jpg)"></div>
+                                        <img src="img/work/kk_app.jpg" alt="">
+                                    </div>
+                                    <div class="title">KKday Official App (Android)</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="expand-content">
+                    <div class="container">
+                        <div class="expand-pane" id="peizhen">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">LIN PEI ZHEN Portfolio</div>
+                                        <p>
+                                            我的作品集用了我最喜歡的簡潔風格呈現<br>
+                                            並且運用了一些動態效果讓畫面更豐富
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/peizhen01.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="work-carousel-item">
+                                                <img src="img/work/peizhen02.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expand-pane" id="kk_web">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">KKday Official Website (Desktop)</div>
+                                        <p>
+                                            123123123
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/kk_web.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="work-carousel-item">
+                                                <img src="img/work/kk_web02.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="work-carousel-item">
+                                                <img src="img/work/kk_web03.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="work-carousel-item">
+                                                <img src="img/work/kk_web04.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="work-carousel-item">
+                                                <img src="img/work/kk_web05.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expand-pane" id="kk_app">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">KKday Official App (Android)</div>
+                                        <p>
+                                            123123123
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/kk_app.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expand-row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#kk_agent" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/agent01.jpg)"></div>
+                                        <img src="img/work/agent01.jpg" alt="">
+                                    </div>
+                                    <div class="title">KKday B2D Website (RWD)</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#mrt" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/mrt.jpg)"></div>
+                                        <img src="img/work/mrt.jpg" alt="">
+                                    </div>
+                                    <div class="title">KKday x Taipei MRT event</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#boracay" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/boracay.jpg)"></div>
+                                        <img src="img/work/boracay.jpg" alt="">
+                                    </div>
+                                    <div class="title">KKday Boracay event</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="expand-content">
+                    <div class="container">
+                        <div class="expand-pane" id="kk_agent">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">KKday B2D Website (RWD)</div>
+                                        <p>
+                                            123123123
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/agent01.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="work-carousel-item">
+                                                <img src="img/work/agent02.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expand-pane" id="mrt">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">KKday x Taipei MRT event</div>
+                                        <p>
+                                            123123123
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/mrt.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="work-carousel-item">
+                                                <img src="img/work/mrt2.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expand-pane" id="boracay">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">KKday Boracay event</div>
+                                        <p>
+                                            123123123
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/boracay.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expand-row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#disney" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/disney.jpg)"></div>
+                                        <img src="img/work/disney.jpg" alt="">
+                                    </div>
+                                    <div class="title">KKday Disneyland in California</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#outdoors" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/outdoors.jpg)"></div>
+                                        <img src="img/work/outdoors.jpg" alt="">
+                                    </div>
+                                    <div class="title">Outdoors Club website</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#supplier" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/supplier.jpg)"></div>
+                                        <img src="img/work/supplier.jpg" alt="">
+                                    </div>
+                                    <div class="title">KKday Supplier App</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="expand-content">
+                    <div class="container">
+                        <div class="expand-pane" id="disney">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">KKday Disneyland in California</div>
+                                        <p>
+                                            123123123
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/disney.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="work-carousel-item">
+                                                <img src="img/work/disney2.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expand-pane" id="outdoors">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">Outdoors Club website</div>
+                                        <p>
+                                            123123123
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/outdoors.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expand-pane" id="supplier">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">KKday Supplier App</div>
+                                        <p>
+                                            123123123
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/supplier.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expand-row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#tigerair" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/tigerair.jpg)"></div>
+                                        <img src="img/work/tigerair.jpg" alt="">
+                                    </div>
+                                    <div class="title">KKday x Tiger Air Taiwan</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <a href="#practice" data-toggle="expand">
+                                    <div class="img-wrap">
+                                        <div class="img-bg" style="background-image: url(img/work/practice.jpg)"></div>
+                                        <img src="img/work/practice.jpg" alt="">
+                                    </div>
+                                    <div class="title">Korean Travel Spot Collection</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="expand-content">
+                    <div class="container">
+                        <div class="expand-pane" id="tigerair">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">KKday x Tiger Air Taiwan</div>
+                                        <p>
+                                            123123123
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/tigerair.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expand-pane" id="practice">
+                            <div class="row">
+                                <div class="col-md-5 order-md-12">
+                                    <div class="content">
+                                        <div class="title">Korean Travel Spot Collection</div>
+                                        <p>
+                                            123123123
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Check it</a>
+                                        <a href="javascript:;" class="close">✕</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="work-carousel-wrap">
+                                        <div class="work-carousel owl-carousel owl-theme">
+                                            <div class="work-carousel-item active">
+                                                <img src="img/work/practice.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="copyright">Made with ❤ in Taiwan</div>
+        </div>
+    </footer>
+</body>
+
+</html>

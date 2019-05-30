@@ -437,6 +437,7 @@ section {
 .expand-pane .content p {
     margin-bottom: 40px;
     color: #666;
+    font-size: 1.4rem;
 }
 
 .expand-pane .close {

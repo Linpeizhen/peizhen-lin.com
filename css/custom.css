@@ -565,23 +565,10 @@ section {
         display: block;
     }
 
-    .mobile-menu,
-    .mobile-menu:active,
-    .mobile-menu:focus,
-    .mobile-menu:hover {
-        color: #333;
-        font-size: 2rem;
-        text-decoration: none;
-    }
-
-    .mobile-menu {
-        color: #fff;
-    }
-
     .mobile-menu .bar {
         width: 20px;
         height: 2px;
-        background-color: #444;
+        background-color: #fff;
         margin: 5px 0;
         opacity: 1;
         transition: .3s;
@@ -606,8 +593,9 @@ section {
         transform: translateY(-7px) rotate(45deg) scale(1.25);
     }
 
-    header.fix .mobile-menu {
-        color: #333;
+    header.fix .mobile-menu .bar,
+    .mobile-menu.active .bar {
+        background-color: #444;
     }
 
     ul.header-menu {
@@ -676,7 +664,7 @@ section {
     }
 
     .banner .content {
-        top: 40px;
+        top: 30px;
         transform: none;
     }
     

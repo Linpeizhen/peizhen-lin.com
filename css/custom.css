@@ -742,7 +742,7 @@ section {
 
     .expand-pane .content {
         padding: 0;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
     }
 
     .expand-pane .close {
@@ -755,8 +755,15 @@ section {
     }
 
     .work-carousel .work-carousel-item {
+        max-height: 40vh;
+        min-height: auto;
         padding: 20px 25px;
     }    
+
+    .work-carousel .owl-dots {
+        bottom: auto;
+        top: -35px;
+    }
 
     .owl-nav {
         display: none;

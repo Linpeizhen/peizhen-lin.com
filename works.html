@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Works of LIN PEI-ZHEN</title>
+    <title>Works | LIN PEI-ZHEN</title>
 
     <meta name="description" content="我是林佩禎，現在是一名 UI 設計師。2015 年大三時開始以平面設計為志向，在畢業前夕得到一個實習機會，從此正式踏上設計的道路。在短短的平面設計生涯中，幸運地遇到到一位主管教會我 HTML 和 CSS，讓我轉職成為一名 UI 設計師，我也從此愛上 coding。">
     <meta property="og:description" content="我是林佩禎，現在是一名 UI 設計師。2015 年大三時開始以平面設計為志向，在畢業前夕得到一個實習機會，從此正式踏上設計的道路。在短短的平面設計生涯中，幸運地遇到到一位主管教會我 HTML 和 CSS，讓我轉職成為一名 UI 設計師，我也從此愛上 coding。">
@@ -54,15 +54,17 @@
                         expandContent.removeClass('open').slideUp(function() {
                             targetPane.removeClass('active');
                             card.removeClass('active');
+                            $('body').removeClass('menu-oepn');
                         });
-                        console.log('1')
+
                     // 卡片對應的 pane 未顯示，顯示對應的 pane 並關閉其他已打開的 pane
                     } else {
                         targetPane.addClass('active');
                         otherPane.removeClass('active');
                         card.addClass('active');
                         otherCard.removeClass('active');
-                        console.log('2')
+                        $('body').addClass('menu-oepn');
+
                     }
                 // 父層 content 未打開
                 } else {
@@ -74,13 +76,14 @@
                         expandContent.addClass('open').slideDown();
                         otherCard.removeClass('active');
                         card.addClass('active');
-                        console.log('3')
+                        $('body').addClass('menu-oepn');
+
                     // 沒有其他 content 開著，直接打開對應的 content
                     } else {
                         targetPane.addClass('active');
                         expandContent.addClass('open').slideDown();
                         card.addClass('active');
-                        console.log('4')
+                        $('body').addClass('menu-oepn');
                     }
                 }
             });
@@ -92,6 +95,7 @@
                     $('.card').removeClass('active');
                     closeBtn.closest('.expand-pane').removeClass('active'); 
                 });
+                $('body').removeClass('menu-oepn');
             })
 
             var workCarousel = $('.work-carousel');
@@ -104,6 +108,7 @@
 
         function openMenu() {
 			$('.header-menu, .mobile-menu').toggleClass('active');
+            $('body').toggleClass('menu-oepn');
 		}
     </script>
 </head>
@@ -119,7 +124,11 @@
                     <li><a href="/">About</a></li>
                     <li><a href="works">Works</a></li>
 				</ul>
-				<a href="javascript:;" class="mobile-menu d-block d-sm-block d-md-none" onclick="openMenu();"><i class="icon-menu"></i></a>
+				<a href="javascript:;" class="mobile-menu d-block d-sm-block d-md-none" onclick="openMenu();">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </a>
             </div>
         </div>
     </header>

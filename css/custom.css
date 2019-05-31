@@ -758,8 +758,12 @@ section {
     }
 
     .expand-pane .close {
-        top: -40px;
-        right: 15px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        background-color: #fff;
+        opacity: 1;
     }
 
     .work-carousel .work-carousel-item {

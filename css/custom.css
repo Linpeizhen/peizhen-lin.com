@@ -726,7 +726,7 @@ section {
     }
     
     .expand-pane {
-        padding: 60px 15px;
+        padding: 60px 15px 0;
     }
     
     .expand-pane.active {
@@ -754,10 +754,14 @@ section {
         opacity: 1;
     }
 
+    .work-carousel-wrap {
+        margin: 0 -15px;
+    }
+    
     .work-carousel .work-carousel-item {
-        max-height: 40vh;
+        max-height: 50vh;
         min-height: auto;
-        padding: 20px 25px;
+        padding: 25px;
     }    
 
     .work-carousel .owl-dots {

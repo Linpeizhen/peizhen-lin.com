@@ -320,7 +320,8 @@ section {
 }
 
 /* Works */
-.work-section {
+.work-section,
+.contact-section {
     padding-top: 80px;
     padding-bottom: 0;
 }
@@ -545,6 +546,11 @@ section {
 
 .work-carousel .owl-dots .owl-dot.active span {
     background: #666;
+}
+
+/* Contact */
+.contact-section {
+    min-height: calc(100vh - 117px);
 }
 
 @media (max-width: 767px) {

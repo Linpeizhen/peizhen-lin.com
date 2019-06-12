@@ -1,0 +1,246 @@
+html {
+  font-size: 10px; /*Prevent Some Usre pre-set browser font-size*/
+  }
+body {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  font-family: 'Helvetica Neue','Helvetica','Arial','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #333;
+  margin: 0 auto; 
+  overflow-x: hidden; 
+  }
+h2, h4{
+  font-family:inherit;
+  font-weight:bold;
+  }
+h2{
+  font-size:2.4rem;
+  line-height: 1.5;
+  margin:0 0 20px 0;
+  } 
+h4{
+  font-size:1.6rem ;
+  line-height: 1.7;
+  }
+p{
+  margin-bottom:8px;
+}
+.mt-50{
+  margin-top:50px;
+}
+.d-flex{
+  display: flex;
+  }
+.align-item-center{
+  align-items: center;
+  }
+header{
+  padding:10px 0;
+}
+.maintenance-wrap {
+  height: calc(100vh - 70px);
+  min-height: 500px;
+  display: flex;
+  align-items:center;
+  padding-bottom:60px;
+  }
+ul.lang-tab{
+  border:none;
+  position: fixed;
+  top:0;
+  right:0;
+  padding:20px 15px;
+  background:#fff;
+  z-index: 999;
+  }
+ul.lang-tab>li{
+  float:none;
+  display: inline-block;
+  }
+ul.lang-tab>li>a{
+  border:none !important;
+  background:none !important;
+  padding:0 5px;
+  color:#666;
+  }
+ul.lang-tab>li.active>a{
+  color:#26bec9 !important;
+  }
+ul.lang-tab>li>span{
+  color:#ccc;
+  }
+.graph-area{
+  position: relative;
+  overflow: hidden;
+  background-color: #E8F7F8;
+  }
+.graph-mask{
+  width:calc(100% + 2px);
+  margin:-3px -1px;
+  position: relative;
+  z-index: 99;
+  pointer-events: none;
+  }
+.graph-item{
+  position: absolute;
+  pointer-events: none;
+  }
+.sky{
+  width:100%;
+  }
+.ballon{
+  animation: ballonWave 5s ease-in-out 1 both;
+  top: 18%;
+  left: 34%;
+  }
+.rocket{
+  animation: rocketCome 5s ease-in-out 4s 1 both;
+  height:333px;
+  width:100%;
+  top: 15%;
+  left: 0;
+  }
+.rocket svg{
+  height:100%;
+  width:100%;
+  }
+.rocket #star1, .rocket #star2{
+  animation: starBoom 1.4s ease-out 4.7s 1 both;
+  transform-origin:50% 30%;
+  }
+.rocket #star2{
+  animation-delay:5s;
+  } 
+.rocket #star1 > *, .rocket #star2 > *{
+  animation: starRotate 1.4s linear 4.7s 1 both;
+  transform-box: fill-box;
+  transform-origin: 50%;
+  }
+.rocket #shine{
+  animation: shine 2s ease-out infinite both;
+  }
+.rocket #fire g >  path{
+  animation: fire 0.5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  }
+.rocket #fire #fire2 > path{
+  animation-delay:0.1s;
+  }
+.rocket #fire #fire3 > path{
+  animation-delay: 0.3s;
+  }
+.rocket #fire #fire4 > path{
+  animation-delay: 0.4s;
+  }
+@keyframes ballonWave{
+  0%{
+    transform: translateY(10px);
+  }
+  15%{
+    transform: translateY(-10px);
+  }
+  30%{
+    transform: translateY(10px);
+  }
+  45%{
+    transform: translateY(-10px);
+  }
+  60%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(-800px);
+  }
+}
+@keyframes rocketCome{
+  0%{
+    transform: translateY(800px);
+  }
+  20%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+@keyframes fire{
+  0%{
+    transform: scale(0.9);
+  }
+  50%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(0.9);
+  }
+}
+@keyframes starBoom{
+  0%{
+    transform: scale(0);
+  }
+  
+  100%{
+    transform: scale(2);
+  }
+}
+@keyframes starRotate{
+  0%{
+    transform: rotateZ(0) scale(0);
+  }
+  50%{
+    transform: rotateZ(180deg) scale(1);
+  }
+  100%{
+    transform: rotateZ(360deg) scale(0);
+  }
+}
+@keyframes shine{
+  0%{
+    transform: translateX(-20px);
+  }
+  40%{
+    transform: translateX(120px);
+  }
+  100%{
+    transform: translateX(150px);
+  }
+}
+@media (max-width: 991px){
+  h2{
+    margin:30px 0 10px 0;
+    font-size: 2.2rem;
+  }
+  h4{
+    font-size: 1.5rem;
+  }
+  .maintenance-wrap{
+    height: auto;
+    text-align: center;
+  }
+  .d-flex{
+    display: block;
+  }
+  .graph-item:not(.sky){
+    max-height:70%;
+  }
+  .rocket{
+    text-align: center;
+    height:70%;
+  }
+  ul.lang-tab{
+    width:100%;
+    top:auto;
+    bottom:0;
+    padding:10px 15px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+}
+@media (max-width: 767px){
+  .ballon{
+    left:32.5%;
+  }
+}

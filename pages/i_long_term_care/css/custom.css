@@ -667,6 +667,7 @@ input[type=number]::-webkit-outer-spin-button,
 
 	.banner-txt-item {
 		display: flex;
+		align-items: flex-start;
 		margin-top: 0;
 		margin-bottom: 40px;
 		padding: 0;

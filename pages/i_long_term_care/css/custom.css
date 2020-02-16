@@ -753,16 +753,28 @@ input[type=number]::-webkit-outer-spin-button,
 	}
 
 	.review-sec {
-		margin-top: -120px;
-		overflow-x: auto;
+		margin-top: -160px;
 	}
 
+	.review-sec .container {
+		padding: 0;
+	}
+	
 	.review-sec .row {
-		margin: 0 -5px;
+		margin: 0;
+		padding: 15px;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
 	}
 
 	.review-sec .row [class*=col-] {
 		padding: 0 5px;
+		scroll-snap-align: center;
+		scroll-snap-stop: always;
+	}
+
+	.review-sec .row [class*=col-]:last-child .review {
+		margin-right: 15px;
 	}
 
 	.review {

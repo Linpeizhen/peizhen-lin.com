@@ -766,6 +766,11 @@ input[type=number]::-webkit-outer-spin-button,
 		padding: 15px;
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;
+		-ms-overflow-style: none;
+	}
+
+	.review-sec .row::-webkit-scrollbar {
+		display: none;
 	}
 
 	.review-sec .row [class*=col-] {

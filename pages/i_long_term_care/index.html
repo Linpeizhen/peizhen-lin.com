@@ -221,7 +221,7 @@
 		</section>
 		<section class="btn-sec">
 			<div class="container text-center">
-				<a href="javascript:;" class="btn btn-lg btn-gradient animate-item">
+				<a href="javascript:;" onclick="scrollToPay();" class="btn btn-lg btn-gradient animate-item">
 					<span>我願意支持愛長照優質內容</span>
 					<i class="fa fa-chevron-circle-right"></i>
 				</a>
@@ -416,7 +416,7 @@
 				<b class="num-txt">950</b>
 				人支付LINE發訊費，感謝大家的支持。
 			</div>
-			<a href="javascript:;" class="btn btn-sm btn-gradient">
+			<a href="javascript:;" onclick="scrollToPay();" class="btn btn-sm btn-gradient">
 				<span>我也要支持</span>
 				<i class="fa fa-chevron-circle-right"></i>
 			</a>
@@ -506,10 +506,13 @@
 		var elements = $('.clover');
 		Stickyfill.add(elements);
 
+
 		$(window).on('scroll load resize', function() {
 			var scrollTop = $(window).scrollTop();
 			var scrollBtm = $(window).scrollTop() + $(window).height();
 			var item = $('.animate-item');
+			var payment = $('.payment');
+			var paymentTop = payment.offset().top;
 
 			item.each(function() {
 				var itemTop = $(this).offset().top;
@@ -520,15 +523,20 @@
 				}
 			});
 
-			var paymentSec = $('.payment');
-			var paymentSecTop = paymentSec.offset().top;
-
-			if (scrollBtm > paymentSecTop + 100) {
+			if (scrollBtm > paymentTop + 100) {
 				$('#total-bar').removeClass('fix');
 			} else {
 				$('#total-bar').addClass('fix');
 			}
 		});
+
+		var paymentSecTop = $('.payment-sec').offset().top;
+
+		function scrollToPay () {
+			$('html, body').animate({
+				scrollTop: paymentSecTop - 20,
+			}, 300)
+		}
 	</script>
 </body>
 

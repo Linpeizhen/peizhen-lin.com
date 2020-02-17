@@ -582,7 +582,9 @@ input[type=number]::-webkit-outer-spin-button,
 
 #total-bar .btn {
 	box-shadow: none;
-	background: #84A403;	
+	background: #84A403;
+	white-space: nowrap;
+	margin-left: 12px;
 }
 
 .alert {
@@ -768,7 +770,6 @@ input[type=number]::-webkit-outer-spin-button,
 	}
 	
 	.review-sec .row {
-		margin: 0;
 		padding: 15px;
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;

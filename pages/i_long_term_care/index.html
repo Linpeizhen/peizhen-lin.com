@@ -543,10 +543,9 @@
 			}
 		});
 
-		var paymentSecTop = $('.payment-sec').offset().top;
-
 		function scrollToPay () {
-			console.log(paymentSecTop);
+			var paymentSecTop = $('.payment-sec').offset().top;
+
 			$('html, body').animate({
 				scrollTop: paymentSecTop - 20,
 			}, 300)

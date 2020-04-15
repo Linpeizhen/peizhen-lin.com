@@ -514,7 +514,8 @@ input[type=number]::-webkit-outer-spin-button,
 
 .payment p {
 	flex-grow: 1;
-	margin-top: 40px;
+	margin-top: 24px;
+	margin-bottom: 32px;
 }
 
 .total-txt {

@@ -1135,6 +1135,10 @@ header .menu li img, .menu2 dd li img {
     color: #fff;
 }
 
+.text-underline {
+	text-decoration: underline;
+}
+
 /* footer */
 footer {
 	padding: 12px 0;

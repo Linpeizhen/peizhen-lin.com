@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="40px" viewBox="0 0 39 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>skill_origami</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Portfolio" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="202003" transform="translate(-466.000000, -2844.000000)">
+            <g id="skill_origami" transform="translate(465.000000, 2844.000000)">
+                <rect id="Rectangle-Copy-4" x="0" y="0" width="40" height="40"></rect>
+                <g id="Group" transform="translate(1.000000, 0.000000)" fill-rule="nonzero">
+                    <path d="M14.1246612,14.0379404 L14.1246612,0.054200542 L0.0975609756,0.054200542 L14.1246612,14.0379404 Z M38.9268293,10.8075881 L33.8753388,5.83197832 L26.8509485,12.8130081 L14.1246612,0.054200542 L14.1246612,39.6205962 L33.8753388,19.8265583 L33.8753388,10.8075881 L38.9268293,10.8075881 Z" id="XMLID_5_" fill="#0991FF"></path>
+                    <polyline id="XMLID_6_" fill="#62CCFD" points="0.0975609756 0.054200542 14.1246612 14.0379404 14.1246612 0.054200542 0.0975609756 0.054200542"></polyline>
+                    <polyline id="XMLID_7_" fill="#0991FF" points="14.1246612 39.6205962 14.1246612 0.054200542 33.8753388 19.8265583 14.1246612 39.6205962"></polyline>
+                    <polygon id="XMLID_8_" fill="#62CCFD" points="33.8753388 5.83197832 33.8753388 19.8265583 26.8509485 12.8130081"></polygon>
+                    <polygon id="XMLID_9_" fill="#0991FF" points="33.8753388 5.83197832 33.8753388 10.8075881 38.9268293 10.8075881"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

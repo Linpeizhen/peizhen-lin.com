@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="40px" viewBox="0 0 36 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>skill_html</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.00487804878 0.0221138211 35.2504065 0.0221138211 35.2504065 39.995122 0.00487804878 39.995122"></polygon>
+    </defs>
+    <g id="Portfolio" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="202003" transform="translate(-67.000000, -3121.000000)">
+            <g id="skill_html" transform="translate(65.000000, 3121.000000)">
+                <rect id="Rectangle-Copy-7" x="0" y="0" width="40" height="40"></rect>
+                <g id="html5-seeklogo.com" transform="translate(2.000000, 0.000000)">
+                    <g id="Group-3">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <polyline id="Fill-1" fill="#D2492B" mask="url(#mask-2)" points="3.20796748 36.0036585 0 0.0221138211 35.2504065 0.0221138211 32.0389431 35.9979675 17.6035772 40 3.20796748 36.0036585"></polyline>
+                    </g>
+                    <polyline id="Fill-4" fill="#E05F30" points="17.6252033 36.9410569 29.2896748 33.7072358 32.034065 2.96414634 17.6252033 2.96414634 17.6252033 36.9410569"></polyline>
+                    <polyline id="Fill-5" fill="#EBEBE7" points="17.6252033 16.3092683 11.7856911 16.3092683 11.3823577 11.7902439 17.6252033 11.7902439 17.6252033 7.37723577 6.5595122 7.37723577 7.7497561 20.7221138 17.6252033 20.7221138 17.6252033 16.3092683"></polyline>
+                    <polyline id="Fill-6" fill="#EBEBE7" points="17.6252033 27.7701626 17.6058537 27.7753659 12.6911382 26.4482114 12.3768293 22.9286992 7.94691057 22.9286992 8.56520325 29.8577236 17.604878 32.3671545 17.6252033 32.3615447 17.6252033 27.7701626"></polyline>
+                    <polyline id="Fill-11" fill="#FFFFFE" points="17.6099187 16.3092683 17.6099187 20.7221138 23.0439837 20.7221138 22.5317886 26.4454472 17.6099187 27.7739024 17.6099187 32.3650407 26.656748 29.8577236 27.7601626 17.4942276 27.8678049 16.3092683 17.6099187 16.3092683"></polyline>
+                    <polyline id="Fill-12" fill="#FFFFFE" points="17.6099187 7.37723577 17.6099187 11.7902439 28.2693496 11.7902439 28.3578862 10.7982927 28.5589431 8.56113821 28.6644715 7.37723577 17.6099187 7.37723577"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

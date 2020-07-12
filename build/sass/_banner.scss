@@ -1,0 +1,66 @@
+.banner {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    min-height: 600px;
+    margin-bottom: 60px;
+    background-image: url(../img/banner.jpg);
+    background-size: auto 120%;
+    background-position: right 40%;
+    background-repeat: no-repeat;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20%;
+        min-width: 160px;
+        height: 100%;
+        background-color: #fff;
+        z-index: 3;
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-50%);
+        z-index: 5;
+        padding-bottom: 100px;
+    }
+}
+
+.banner-title {
+    width: 0;
+    font-size: 5rem;
+    font-family: 'Lato', 'Noto Sans TC', '微软雅黑', 'Microsoft YaHei', sans-serif;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #9FC2E2;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 1.2s;
+
+    &:nth-child(2) {
+        transition-delay: .2s;
+    }
+
+    &:nth-child(3) {
+        transition-delay: .4s;
+    }
+
+    &.active {
+        width: 100%;
+    }
+
+    span {
+        padding: 2px;
+        background: #fff;
+    }
+
+    .name {
+        color: #788EA3;
+        white-space: nowrap;
+    }
+}

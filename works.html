@@ -21,16 +21,20 @@
 
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/webfont.css">
+
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/custom.css">
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/owl.carousel.min.js"></script>
     <script>
         $(function () {
 
@@ -56,7 +60,7 @@
                         expandContent.removeClass('open').slideUp(function () {
                             targetPane.removeClass('active');
                             card.removeClass('active');
-                            $('body').removeClass('menu-oepn');
+                            $('body').removeClass('menu-open');
                         });
 
                         // 卡片對應的 pane 未顯示，顯示對應的 pane 並關閉其他已打開的 pane
@@ -65,7 +69,7 @@
                         otherPane.removeClass('active');
                         card.addClass('active');
                         otherCard.removeClass('active');
-                        $('body').addClass('menu-oepn');
+                        $('body').addClass('menu-open');
 
                     }
                     // 父層 content 未打開
@@ -78,14 +82,14 @@
                         expandContent.addClass('open').slideDown();
                         otherCard.removeClass('active');
                         card.addClass('active');
-                        $('body').addClass('menu-oepn');
+                        $('body').addClass('menu-open');
 
                         // 沒有其他 content 開著，直接打開對應的 content
                     } else {
                         targetPane.addClass('active');
                         expandContent.addClass('open').slideDown();
                         card.addClass('active');
-                        $('body').addClass('menu-oepn');
+                        $('body').addClass('menu-open');
                     }
                 }
             });
@@ -97,7 +101,7 @@
                     $('.card').removeClass('active');
                     closeBtn.closest('.expand-pane').removeClass('active');
                 });
-                $('body').removeClass('menu-oepn');
+                $('body').removeClass('menu-open');
             })
 
             var workCarousel = $('.work-carousel');
@@ -110,7 +114,7 @@
 
         function openMenu() {
             $('.header-menu, .mobile-menu').toggleClass('active');
-            $('body').toggleClass('menu-oepn');
+            $('body').toggleClass('menu-open');
         }
     </script>
 </head>
@@ -124,7 +128,7 @@
                 </a>
                 <ul class="header-menu">
                     <li><a href="/">About</a></li>
-                    <li><a href="works">Works</a></li>
+                    <li class="active"><a href="works">Works</a></li>
                     <li><a href="contact">Contact</a></li>
                 </ul>
                 <a href="javascript:;" class="mobile-menu d-block d-sm-block d-md-none" onclick="openMenu();">
@@ -142,17 +146,7 @@
         <div class="expand-row">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a href="#peizhen" data-toggle="expand">
-                                <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/peizhen01.jpg)"></div>
-                                    <img src="img/work/peizhen01.jpg" alt="">
-                                </div>
-                                <div class="title">LIN PEI ZHEN Portfolio</div>
-                            </a>
-                        </div>
-                    </div>
+                    <!-- KK Web -->
                     <div class="col-lg-4">
                         <div class="card">
                             <a href="#kk_web" data-toggle="expand">
@@ -164,14 +158,27 @@
                             </a>
                         </div>
                     </div>
+                    <!-- JX ePAD -->
                     <div class="col-lg-4">
                         <div class="card">
-                            <a href="#kk_app" data-toggle="expand">
+                            <a href="#jx_epad" data-toggle="expand">
                                 <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/kk_app.jpg)"></div>
-                                    <img src="img/work/kk_app.jpg" alt="">
+                                    <div class="img-bg" style="background-image: url(img/work/epad01.jpg)"></div>
+                                    <img src="img/work/epad01.jpg" alt="">
                                 </div>
-                                <div class="title">KKday Official App (Android)</div>
+                                <div class="title">STARLUX 考核系統</div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Everygram -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <a href="#everygram" data-toggle="expand">
+                                <div class="img-wrap">
+                                    <div class="img-bg" style="background-image: url(img/work/everygram01.jpg)"></div>
+                                    <img src="img/work/everygram01.jpg" alt="">
+                                </div>
+                                <div class="title">Everygram</div>
                             </a>
                         </div>
                     </div>
@@ -179,49 +186,34 @@
             </div>
             <div class="expand-content">
                 <div class="container">
-                    <div class="expand-pane" id="peizhen">
-                        <div class="row">
-                            <div class="col-md-5 order-md-12">
-                                <div class="content">
-                                    <div class="title">LIN PEI ZHEN Portfolio</div>
-                                    <p>
-                                        我的作品集用了我最喜歡的簡潔風格呈現
-                                        <br>並且運用了一些動態效果讓畫面更豐富
-                                        <br>
-                                    </p>
-                                    <a href="javascript:;" class="close">✕</a>
-                                </div>
-                            </div>
-                            <div class="col-md-7 order-md-1">
-                                <div class="work-carousel-wrap">
-                                    <div class="work-carousel owl-carousel owl-theme">
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/peizhen01.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item">
-                                            <img src="img/work/peizhen02.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item">
-                                            <img src="img/work/peizhen03.jpg" class="d-block w-100">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="expand-pane" id="kk_web">
                         <div class="row">
                             <div class="col-md-5 order-md-12">
                                 <div class="content">
                                     <div class="title">KKday Official Website (Desktop)</div>
-                                    <p>
+                                    <p class="mb-2">
                                         KKday 電腦版官網是我成為 UI 設計師後第一個負責的產品，一開始有維護 RWD，後來 Mobile 版上線之後就不再維護 RWD 了。
                                         <br>兩年多來陸陸續續重新設計舊頁面，也新增了許多新頁面，並盡力統整整站的視覺風格。
                                         <br>全站使用大量的卡片元素，例如在首頁中運用不同的卡片樣式來使區塊更有識別度。
                                         <br>而設計時也盡量讓畫面能保持乾淨俐落，凸顯重要資訊。例如商品頁一改以往網站 Banner 滿版的樣式，讓壓迫感變得比較低，也更能凸顯圖片底下的文字資訊。
                                         <br>除了設計之外，也負責切版，並且使用 jQuery/JS 來模擬操作效果，讓工程師接手時能更清楚畫面上的操作流程。
                                     </p>
-                                    <a href="https://www.kkday.com" target="_blank" class="btn btn-primary">Visit</a>
+                                    <p class="mb-2"><b>我負責的項目</b></p>
+                                    <ul>
+                                        <li>流程規劃</li>
+                                        <li>介面設計</li>
+                                        <li>靜態頁面切版</li>
+                                    </ul>
+                                    <p class="mb-2"><b>合作夥伴：</b></p>
+                                    <ul>
+                                        <li>Product owner</li>
+                                        <li>UX and UI designer</li>
+                                        <li>Front-end and Back-end developers</li>
+                                        <li>Business development and Marketing specialists</li>
+                                    </ul>
+                                    <div class="mt-5">
+                                        <a href="https://www.kkday.com" target="_blank" class="btn btn-secondary">Visit</a>
+                                    </div>
                                     <a href="javascript:;" class="close">✕</a>
                                 </div>
                             </div>
@@ -242,6 +234,183 @@
                                         </div>
                                         <div class="work-carousel-item">
                                             <img src="img/work/kk_web05.jpg" class="d-block w-100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expand-pane" id="jx_epad">
+                        <div class="row">
+                            <div class="col-md-5 order-md-12">
+                                <div class="content">
+                                    <div class="title">STARLUX 考核系統</div>
+                                    <p class="mb-2">
+                                        這個專案是將舊有的考核系統全面改版，此系統有許多複雜的流程和操作，但藉由 Flow chart 的整理和 Design Guidelines 的建立，我成功將流程化繁為簡，並創造友善的使用者體驗和舒適的閱讀體驗。
+                                        <br>
+                                        其中年度考核表是最複雜的一環，牽涉到欄位的填寫權限、人員權限不同造成的畫面顯示差異以及來來回回的簽核流程，最有挑戰的是如何讓複雜的功能和流程狀態讓使用者易於理解。
+                                        例如完整的考核共有 7 個步驟，原需求書並無提供任何說明讓使用者理解當下所在的步驟，在設計過程中我發現沒有提供流程狀態的指示，會無法理解要進行什麼動作，於是我在考核表下方加上當前狀態的提示，並搭配考核表頁籤的鉛筆圖標，讓使用者了解該填寫哪些頁面及現在考核的狀態。
+                                    </p>
+                                    <p class="mb-2"><b>我負責的項目</b></p>
+                                    <ul>
+                                        <li>流程規劃 / Flow chart</li>
+                                        <li>介面設計</li>
+                                        <li>靜態頁面切版</li>
+                                        <li>建立 Design Guidelines</li>
+                                    </ul>
+                                    <p class="mb-2"><b>合作夥伴：</b></p>
+                                    <ul>
+                                        <li>Project Manager</li>
+                                        <li>Front-end developers</li>
+                                        <li>Back-end developers</li>
+                                        <li>Human Resources Specialist / Manager</li>
+                                    </ul>
+                                    <a href="javascript:;" class="close">✕</a>
+                                </div>
+                            </div>
+                            <div class="col-md-7 order-md-1">
+                                <div class="work-carousel-wrap">
+                                    <div class="work-carousel owl-carousel owl-theme">
+                                        <div class="work-carousel-item active">
+                                            <img src="img/work/epad01.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="work-carousel-item active">
+                                            <img src="img/work/epad02.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="work-carousel-item active">
+                                            <img src="img/work/epad03.jpg" class="d-block w-100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expand-pane" id="everygram">
+                        <div class="row">
+                            <div class="col-md-5 order-md-12">
+                                <div class="content">
+                                    <div class="title">Everygram</div>
+                                    <p class="mb-3">
+                                        這是我和工程師朋友正在合作開發的 Side project，主要功能是管理登山裝備和背包重量管理，提供給想要管理裝備清單，或是想朝向輕量化邁進的戶外活動者使用。
+                                        <br>
+                                        這個專案是由我自身經驗所衍伸出來的發想，我正在進行背包輕量化，但找不到一個適合我的裝備管理應用，於是決定自己動手做。
+                                        <br>
+                                        一開始的需求都由我和夥伴自己提出，已經有初步的設計稿和功能可以使用，但如果想要推廣這個產品，讓其他戶外活動者也可以使用，勢必要進行一些使用者研究和訪談，來了解目前戶外活動者對於裝備管理的需求和痛點，以更加確定此產品的方向。目前使用者研究正在規劃中。
+                                    </p>
+                                    <p class="mb-2"><b>我負責的項目</b></p>
+                                    <ul>
+                                        <li>功能發想/流程規劃</li>
+                                        <li>使用者研究規劃</li>
+                                        <li>介面設計</li>
+                                        <li>靜態頁面切版</li>
+                                    </ul>
+                                    <p class="mb-2"><b>合作夥伴：</b></p>
+                                    <ul>
+                                        <li><a href="https://leeboy.in" target="_blank">LeeBoYin</a> - Front-end developer</li>
+                                    </ul>
+                                    <a href="javascript:;" class="close">✕</a>
+                                </div>
+                            </div>
+                            <div class="col-md-7 order-md-1">
+                                <div class="work-carousel-wrap">
+                                    <div class="work-carousel owl-carousel owl-theme">
+                                        <div class="work-carousel-item active">
+                                            <img src="img/work/everygram01.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="work-carousel-item">
+                                            <img src="img/work/everygram02.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="work-carousel-item">
+                                            <img src="img/work/everygram03.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="work-carousel-item">
+                                            <img src="img/work/everygram04.jpg" class="d-block w-100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="expand-row">
+            <div class="container">
+                <div class="row">
+                    <!-- BYZ -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <a href="#byz" data-toggle="expand">
+                                <div class="img-wrap">
+                                    <div class="img-bg" style="background-image: url(img/work/byz01.jpg)"></div>
+                                    <img src="img/work/byz01.jpg" alt="">
+                                </div>
+                                <div class="title">BYZ</div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- KK App -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <a href="#kk_app" data-toggle="expand">
+                                <div class="img-wrap">
+                                    <div class="img-bg" style="background-image: url(img/work/kk_app.jpg)"></div>
+                                    <img src="img/work/kk_app.jpg" alt="">
+                                </div>
+                                <div class="title">KKday Official App (Android)</div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- KK maintain -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <a href="#kk_maintain" data-toggle="expand">
+                                <div class="img-wrap">
+                                    <div class="img-bg" style="background-image: url(img/work/maintain01.jpg)"></div>
+                                    <img src="img/work/maintain01.jpg" alt="">
+                                </div>
+                                <div class="title">KKday 系統升級公告頁面</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="expand-content">
+                <div class="container">
+                    <div class="expand-pane" id="byz">
+                        <div class="row">
+                            <div class="col-md-5 order-md-12">
+                                <div class="content">
+                                    <div class="title">BYZ</div>
+                                    <p class="mb-2">
+                                        這是和一位工程師合作開發的 Web App。讀音像是「壁紙」，開發的初衷是為了讓團隊在進行產品易用性測試後，快速彙整大家觀察到的易用性問題並且投票表決處理問題的優先順序。Byz 是一款可以輕易透過連結邀請成員加入、新增貼文及評論，並且支援即時共同編輯的 Web App，很適合用在 Brainstorming 創意發想類型的會議。
+                                    </p>
+                                    <p class="mb-2"><b>我負責的項目</b></p>
+                                    <ul>
+                                        <li>介面設計</li>
+                                    </ul>
+                                    <p class="mb-2"><b>合作夥伴：</b></p>
+                                    <ul>
+                                        <li><a href="https://leeboy.in" target="_blank">LeeBoYin</a> - Front-end developer</li>
+                                    </ul>
+                                    <div class="mt-5">
+                                        <a target="_blank" href="https://byz-post.web.app/" class="btn btn-secondary">Visit</a>
+                                    </div>
+                                    <a href="javascript:;" class="close">✕</a>
+                                </div>
+                            </div>
+                            <div class="col-md-7 order-md-1">
+                                <div class="work-carousel-wrap">
+                                    <div class="work-carousel owl-carousel owl-theme">
+                                        <div class="work-carousel-item active">
+                                            <img src="img/work/byz01.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="work-carousel-item active">
+                                            <img src="img/work/byz02.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="work-carousel-item active">
+                                            <img src="img/work/byz03.jpg" class="d-block w-100">
                                         </div>
                                     </div>
                                 </div>
@@ -273,76 +442,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="expand-row">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a href="#kk_agent" data-toggle="expand">
-                                <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/agent01.jpg)"></div>
-                                    <img src="img/work/agent01.jpg" alt="">
-                                </div>
-                                <div class="title">KKday B2D Website (RWD)</div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a href="#kk_maintain" data-toggle="expand">
-                                <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/maintain01.jpg)"></div>
-                                    <img src="img/work/maintain01.jpg" alt="">
-                                </div>
-                                <div class="title">KKday 系統升級公告頁面</div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a href="#mrt" data-toggle="expand">
-                                <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/mrt.jpg)"></div>
-                                    <img src="img/work/mrt.jpg" alt="">
-                                </div>
-                                <div class="title">KKday Summer Escape event</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="expand-content">
-                <div class="container">
-                    <div class="expand-pane" id="kk_agent">
-                        <div class="row">
-                            <div class="col-md-5 order-md-12">
-                                <div class="content">
-                                    <div class="title">KKday B2D Website (RWD)</div>
-                                    <p>
-                                        這是 KKday 給分銷商使用的平台，是我第一個從零開始設計的網頁。設計時以官網風格為主，以改變主色來和官網做區別。
-                                        <br>在這個專案中也第一次嘗試使用 SASS 切版
-                                    </p>
-                                    <a href="javascript:;" class="close">✕</a>
-                                </div>
-                            </div>
-                            <div class="col-md-7 order-md-1">
-                                <div class="work-carousel-wrap">
-                                    <div class="work-carousel owl-carousel owl-theme">
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/agent01.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item">
-                                            <img src="img/work/agent02.jpg" class="d-block w-100">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="expand-pane" id="kk_maintain">
                         <div class="row">
                             <div class="col-md-5 order-md-12">
@@ -352,7 +451,7 @@
                                         這是 KKday 進行系統升級時顯示的頁面。
                                         <br>在這個頁面中我使用 SVG 製作動畫，將熱氣球變成火箭，來表現升級的感覺
                                     </p>
-                                    <a href="pages/maintenance_page/maintenance.html" target="_blank" class="btn btn-primary">Visit</a>
+                                    <a href="pages/maintenance_page/maintenance.html" target="_blank" class="btn btn-secondary">Visit</a>
                                     <a href="javascript:;" class="close">✕</a>
                                 </div>
                             </div>
@@ -370,6 +469,53 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="expand-row">
+            <div class="container">
+                <div class="row">
+                    <!-- KK mrt -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <a href="#mrt" data-toggle="expand">
+                                <div class="img-wrap">
+                                    <div class="img-bg" style="background-image: url(img/work/mrt.jpg)"></div>
+                                    <img src="img/work/mrt.jpg" alt="">
+                                </div>
+                                <div class="title">KKday Summer Escape event</div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- kk boracay -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <a href="#boracay" data-toggle="expand">
+                                <div class="img-wrap">
+                                    <div class="img-bg" style="background-image: url(img/work/boracay.jpg)"></div>
+                                    <img src="img/work/boracay.jpg" alt="">
+                                </div>
+                                <div class="title">KKday - Boracay event</div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- kk disney -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <a href="#disney" data-toggle="expand">
+                                <div class="img-wrap">
+                                    <div class="img-bg" style="background-image: url(img/work/disney.jpg)"></div>
+                                    <img src="img/work/disney.jpg" alt="">
+                                </div>
+                                <div class="title">KKday - Disneyland in California event</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="expand-content">
+                <div class="container">
                     <div class="expand-pane" id="mrt">
                         <div class="row">
                             <div class="col-md-5 order-md-12">
@@ -380,9 +526,9 @@
                                         年夏天舉辦的抽獎活動頁面，需求來自行銷部門。行銷部在台北捷運車廂內佈置了許多盛夏主題的廣告，網頁中的插畫即是廣告中的插畫，由行銷部提供。而我運用這些插畫元素編排了這個活動頁面。
                                     </p>
                                     <a href="https://www.kkday.com/zh-tw/event/summerescape" target="_blank"
-                                        class="btn btn-primary">Page 1</a>
+                                        class="btn btn-secondary">Page 1</a>
                                     <a href="https://event.kkday.com/zh-tw/event/summerescapethanks" target="_blank"
-                                        class="btn btn-primary">Page 2</a>
+                                        class="btn btn-secondary">Page 2</a>
                                     <a href="javascript:;" class="close">✕</a>
                                 </div>
                             </div>
@@ -400,50 +546,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="expand-row">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a href="#boracay" data-toggle="expand">
-                                <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/boracay.jpg)"></div>
-                                    <img src="img/work/boracay.jpg" alt="">
-                                </div>
-                                <div class="title">KKday - Boracay event</div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a href="#disney" data-toggle="expand">
-                                <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/disney.jpg)"></div>
-                                    <img src="img/work/disney.jpg" alt="">
-                                </div>
-                                <div class="title">KKday - Disneyland in California event</div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a href="#outdoors" data-toggle="expand">
-                                <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/outdoors.jpg)"></div>
-                                    <img src="img/work/outdoors.jpg" alt="">
-                                </div>
-                                <div class="title">Outdoors Club website</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="expand-content">
-                <div class="container">
                     <div class="expand-pane" id="boracay">
                         <div class="row">
                             <div class="col-md-5 order-md-12">
@@ -455,7 +557,7 @@
                                         <br>攻略頁由行銷部的設計負責
                                     </p>
                                     <a href="https://event.kkday.com/zh-tw/event/boracay" target="_blank"
-                                        class="btn btn-primary">Visit</a>
+                                        class="btn btn-secondary">Visit</a>
                                     <a href="javascript:;" class="close">✕</a>
                                 </div>
                             </div>
@@ -481,7 +583,7 @@
                                         Banner，我在設計網頁時也加入這兩個要素，夜晚以星空、剪影和霓光呈現，白天則以藍天白雲呈現。
                                     </p>
                                     <a href="https://event.kkday.com/zh-tw/topic/2017/disneyland-california"
-                                        target="_blank" class="btn btn-primary">Visit</a>
+                                        target="_blank" class="btn btn-secondary">Visit</a>
                                     <a href="javascript:;" class="close">✕</a>
                                 </div>
                             </div>
@@ -499,58 +601,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="expand-pane" id="outdoors">
-                        <div class="row">
-                            <div class="col-md-5 order-md-12">
-                                <div class="content">
-                                    <div class="title">Outdoors Club website</div>
-                                    <p>
-                                        2018 年的夏天，我在 KKday 創辦了戶外活動社，並且定期舉辦社員分享會和戶外活動。在管理這些活動是都是以 Google sheets
-                                        處理，在某一次閒聊中就發起了戶外活動社官網的計畫，官網功能就是以管理活動以及讓社員報名活動為主。目前此專案還在開發階段，圖為我負責設計的活動列表頁。
-                                    </p>
-                                    <a href="javascript:;" class="close">✕</a>
-                                </div>
-                            </div>
-                            <div class="col-md-7 order-md-1">
-                                <div class="work-carousel-wrap">
-                                    <div class="work-carousel owl-carousel owl-theme">
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/outdoors.jpg" class="d-block w-100">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-
         <div class="expand-row">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a href="#supplier" data-toggle="expand">
-                                <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/supplier.jpg)"></div>
-                                    <img src="img/work/supplier.jpg" alt="">
-                                </div>
-                                <div class="title">KKday Supplier App</div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a href="#tigerair" data-toggle="expand">
-                                <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/tigerair.jpg)"></div>
-                                    <img src="img/work/tigerair.jpg" alt="">
-                                </div>
-                                <div class="title">KKday x Tiger Air Taiwan</div>
-                            </a>
-                        </div>
-                    </div>
+                    <!-- Mountains -->
                     <div class="col-lg-4">
                         <div class="card">
                             <a href="#mountain" data-toggle="expand">
@@ -566,52 +623,6 @@
             </div>
             <div class="expand-content">
                 <div class="container">
-                    <div class="expand-pane" id="supplier">
-                        <div class="row">
-                            <div class="col-md-5 order-md-12">
-                                <div class="content">
-                                    <div class="title">KKday Supplier App</div>
-                                    <p>
-                                        這是給供應商使用的核銷 App，當時接到需求時只有四五個頁面，看似簡單，但在設計過程中發現 App 操作流程上會有需多不同的狀態，所以也很有挑戰性。
-                                    </p>
-                                    <a href="javascript:;" class="close">✕</a>
-                                </div>
-                            </div>
-                            <div class="col-md-7 order-md-1">
-                                <div class="work-carousel-wrap">
-                                    <div class="work-carousel owl-carousel owl-theme">
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/supplier.jpg" class="d-block w-100">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="expand-pane" id="tigerair">
-                        <div class="row">
-                            <div class="col-md-5 order-md-12">
-                                <div class="content">
-                                    <div class="title">KKday x Tiger Air Taiwan</div>
-                                    <p>
-                                        這是台灣虎航的官網 Menu 中的連結頁面，主要是放虎航航點的票券產品。
-                                    </p>
-                                    <a href="https://event.kkday.com/zh-tw/campaign/tigerairticket" target="_blank"
-                                        class="btn btn-primary">Visit</a>
-                                    <a href="javascript:;" class="close">✕</a>
-                                </div>
-                            </div>
-                            <div class="col-md-7 order-md-1">
-                                <div class="work-carousel-wrap">
-                                    <div class="work-carousel owl-carousel owl-theme">
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/tigerair.jpg" class="d-block w-100">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="expand-pane" id="mountain">
                         <div class="row">
                             <div class="col-md-5 order-md-12">
@@ -622,7 +633,7 @@
                                         <br>我分享了我最喜歡的高山，花了很多時間編排簡報，因為希望讓大家在聽分享的同時，視覺也是愉悅的，也更能感受到山林的美
                                     </p>
                                     <a href="https://drive.google.com/file/d/1_scNcOLGlbwvBzC15TRQTlhoeJyKOMjO/view?usp=sharing"
-                                        target="_blank" class="btn btn-primary">Visit</a>
+                                        target="_blank" class="btn btn-secondary">Visit</a>
                                     <a href="javascript:;" class="close">✕</a>
                                 </div>
                             </div>
@@ -637,82 +648,6 @@
                                         </div>
                                         <div class="work-carousel-item active">
                                             <img src="img/work/mountain03.jpg" class="d-block w-100">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="expand-row">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a href="#stone" data-toggle="expand">
-                                <div class="img-wrap">
-                                    <div class="img-bg" style="background-image: url(img/work/stone.jpg)"></div>
-                                    <img src="img/work/stone.jpg" alt="">
-                                </div>
-                                <div class="title">「岩石去哪兒？」 展覽</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="expand-content">
-                <div class="container">
-                    <div class="expand-pane" id="stone">
-                        <div class="row">
-                            <div class="col-md-5 order-md-12">
-                                <div class="content">
-                                    <div class="title">玩石碎碎念 x 火炎山教育館 「岩石去哪兒？」 展覽</div>
-                                    <p>
-                                        我大學就讀地質系，大三時有位叫做宇彥的同學發起了一個地質科普頻道「玩石碎碎念」。我在團隊中擔任設計、攝影和剪輯，並將拍攝的科普影片發佈於 Youtube 和
-                                        Facebook 上。
-                                        <br>畢業半年後，苗栗火炎山教育館的館員看了影片之後詢問我們合作的意願，於是就一起籌備了一個小小地質展，主要對象是國中小學生。
-                                        <br>我負責展覽的看板和各類文宣設計，石頭公仔由發起人宇彥設計，為了符合國中小學生的口味，整個展覽都是用較可愛親切的風格做設計。
-                                        <br>開展日還舉辦了一個小小的野外勘查活動，讓小朋友體驗地質學家的工作。
-                                        <br>雖然當時的攝影剪輯和設計能力都不及現在，都不是很精緻的作品，但這是一個很特別的經歷，很開心曾經是這個團隊的一員。
-                                    </p>
-                                    <a href="javascript:;" class="close">✕</a>
-                                </div>
-                            </div>
-                            <div class="col-md-7 order-md-1">
-                                <div class="work-carousel-wrap">
-                                    <div class="work-carousel owl-carousel owl-theme">
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/stone.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/stone02.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/stone03.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/stone04.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/stone06.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/stone08.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/stone010.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/stone012.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/stone013.jpg" class="d-block w-100">
-                                        </div>
-                                        <div class="work-carousel-item active">
-                                            <img src="img/work/stone015.jpg" class="d-block w-100">
                                         </div>
                                     </div>
                                 </div>

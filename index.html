@@ -299,10 +299,7 @@
     });
 
     $(function () {
-        // Banner animation
-        $(window).on('load', function () {
-            $('.banner-title').addClass('active');
-        });
+        // Banner animatio
 
         $(window).on('scroll load resize', function () {
             var scrollTop = $(window).scrollTop();
@@ -311,6 +308,8 @@
             var windowBtmScroll = scrollTop + windowHeight;
             var header = $('header');
             var bannerHeight = $('.banner').outerHeight();
+
+            $('.banner-title').addClass('active');
 
             if (scrollTop > bannerHeight) {
                 header.addClass('fix');

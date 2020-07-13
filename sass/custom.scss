@@ -42,7 +42,8 @@
     color: #9FC2E2;
     font-size: 7rem;
     font-weight: 900;
-	white-space: nowrap;
+    white-space: nowrap;
+    user-select: none;
 
 	.section-img & {
 		position: absolute;

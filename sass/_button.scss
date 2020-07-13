@@ -1,5 +1,5 @@
 .btn {
-    font-size:1.6rem;
+	font-size:1.6rem;
 	padding: 8px 36px;
 	transition: .3s;
 
@@ -9,14 +9,15 @@
 }
 
 .btn-primary {
-    min-width: 280px;
+	display: inline-block;
+	min-width: 280px;
 	background-color: #9FC2E2;
 	color: #fff;
-    border: 0;
-    padding: 15px 40px;
-    border-radius: 75px;
-    font-size: 1.6rem;
-    font-weight: bold;
+	border: 0;
+	padding: 15px 40px;
+	border-radius: 75px;
+	font-size: 1.6rem;
+	font-weight: bold;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
 
 	&:hover,
@@ -28,7 +29,7 @@
 }
 
 .btn-secondary {
-    background-color: #4f81af;
+	background-color: #4f81af;
 	border: 0;
 	color: #fff;
 

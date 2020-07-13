@@ -16,3 +16,8 @@ body {
 a {
     color: rgb(89, 125, 158);
 }
+
+img {
+    user-select: none;
+    pointer-events: none;
+}

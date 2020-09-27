@@ -150,3 +150,17 @@ ul {
 	font-size: 32px;
 	opacity: 1;
 }
+
+.more-works-section {
+	padding: 0 0 30px;
+
+	.watermark::before {
+		content: '';
+		display: block;
+		margin: 30px auto;
+		height: 2px;
+		width: 60px;
+		background-color: $c-primary;
+		opacity: 0.5;
+	}
+}

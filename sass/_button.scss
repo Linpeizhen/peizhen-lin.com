@@ -1,4 +1,5 @@
 .btn {
+	display: inline-block;
 	font-size:1.6rem;
 	padding: 8px 36px;
 	transition: .3s;
@@ -8,10 +9,13 @@
 	}
 }
 
+.btn-link:hover {
+	color: darken($c-primary-dark, 20%);
+}
+
 .btn-primary {
-	display: inline-block;
 	min-width: 280px;
-	background-color: #9FC2E2;
+	background-color: $c-primary;
 	color: #fff;
 	border: 0;
 	padding: 15px 40px;

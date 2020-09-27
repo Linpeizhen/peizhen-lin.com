@@ -14,10 +14,26 @@ body {
 }
 
 a {
-    color: rgb(89, 125, 158);
+    color: $c-primary-dark;
+
+    &:hover {
+        color: darken($c-primary-dark, 20%);
+    }
 }
 
 img {
     user-select: none;
     pointer-events: none;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
 }

@@ -1,0 +1,15 @@
+.watermark {
+    opacity: 0.2;
+    color: $c-primary;
+    font-size: 7rem;
+    font-weight: 900;
+    white-space: nowrap;
+    user-select: none;
+
+	.section-img & {
+		position: absolute;
+		bottom: 40px;
+		left: calc(100% - 10px);
+		z-index: -1;
+	}
+}

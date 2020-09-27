@@ -1,0 +1,18 @@
+.frame-desktop {
+	width: 100%;
+	padding-top: 5%;
+	background-color: #fff;
+	background-image: url(/img/frame-desktop-buttons.svg);
+	background-size: 26px;
+	background-position: 6px 6px;
+	background-repeat: no-repeat;
+	border: 4px solid #fff;
+	border-radius: 10px;
+	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.16);
+
+	.frame-content {
+		width: 100%;
+		background-color: #f4f4f4;
+		border-radius: 4px 8px;
+	}
+}

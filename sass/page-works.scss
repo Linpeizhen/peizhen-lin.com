@@ -36,11 +36,11 @@ section {
 }
 
 ul {
-	padding-left: 20px;
 	list-style: none;
+	padding-left: 20px;
 
 	li {
-		margin-bottom: 4px;
+		margin-bottom: 8px;
 
 		&::before {
 			content: "/";
@@ -51,6 +51,14 @@ ul {
 			margin-left: -1em;
 			transform: rotate(5deg);
 		}
+	}
+}
+
+ol {
+	padding-left: 20px;
+
+	li {
+		margin-bottom: 8px;
 	}
 }
 
@@ -195,10 +203,12 @@ ul {
 		padding-bottom: 56.25%;
 		overflow-y: auto;
 		position: relative;
+		padding-right: 2px;
 
 		.work-mockup-img {
 			position: absolute;
 			width: 100%;
+			padding-right: 4px;
 		}
 	}
 }
@@ -282,9 +292,10 @@ ul {
 	font-size: 14px;
 	text-align: center;
 
-	i {
-		color: #999;
-		font-style: normal;
+	&::before {
+		content: '▲';
+		color: #ccc;
+		font-size: 12px;
 	}
 
 }

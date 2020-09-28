@@ -36,3 +36,28 @@
 		display: none;
 	}
 }
+
+$c-kkday: #26bec9;
+$c-epad: #86754D;
+
+.flow-diagram-kkday .text {
+	&::before {
+		background-color: $c-kkday;
+		box-shadow: 30px 0 0 $c-kkday;
+	}
+
+	&::after {
+		background-color: $c-kkday;
+	}
+}
+
+.flow-diagram-epad .text{
+	&::before {
+		background-color: $c-epad;
+		box-shadow: 30px 0 0 $c-epad;
+	}
+
+	&::after {
+		background-color: $c-epad;
+	}
+}

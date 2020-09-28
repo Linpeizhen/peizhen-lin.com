@@ -260,73 +260,6 @@
 	}
 }
 
-
-
-.work-carousel-wrap {
-    background-color: #eaeaea;
-    position: relative;
-}
-
-.work-carousel .work-carousel-item {
-    min-height: 300px;
-    max-height: 65vh;
-    overflow-y: auto;
-    padding: 30px 40px;
-}
-
-.work-carousel .owl-nav button[class*=owl] {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    color: rgba(0,0,0,0.4);
-    font-size: 3rem;
-    outline: none;
-    background: transparent;
-}
-
-.work-carousel .owl-nav button[class*=owl]:hover {
-    background: transparent;
-    color:#333;
-}
-
-.work-carousel .owl-nav button[class*=owl].disabled {
-    opacity: 0.2;
-}
-
-.work-carousel .owl-nav .owl-prev {
-    left: -40px;
-}
-
-.work-carousel .owl-nav .owl-next {
-    right: -40px;
-}
-
-.work-carousel .owl-dots {
-    position:absolute;
-    bottom: -25px;
-    left: 0;
-    width:100%;
-}
-
-.work-carousel .owl-dots .owl-dot {
-    padding: 5px 0 !important;
-    outline: none;
-}
-
-.work-carousel .owl-dots .owl-dot span {
-    width: 20px;
-    height: 2px;
-    margin: 0 4px;
-    background: #ccc;
-    border-radius: 0;
-}
-
-.work-carousel .owl-dots .owl-dot.active span {
-    background: #666;
-}
-
 /* Contact */
 .contact-section {
     min-height: calc(100vh - 117px);
@@ -548,24 +481,5 @@
         padding: 10px;
         background-color: #fff;
         opacity: 1;
-    }
-
-    .work-carousel-wrap {
-        margin: 0 -15px;
-    }
-
-    .work-carousel .work-carousel-item {
-        max-height: 50vh;
-        min-height: auto;
-        padding: 25px;
-    }
-
-    .work-carousel .owl-dots {
-        bottom: auto;
-        top: -35px;
-    }
-
-    .owl-nav {
-        display: none;
     }
 }

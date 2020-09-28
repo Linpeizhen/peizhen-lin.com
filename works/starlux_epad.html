@@ -35,7 +35,9 @@
     <script src="/js/vendor/jquery.js"></script>
     <script src="/js/vendor/bootstrap.min.js"></script>
     <script src="/js/vendor/owl.carousel.min.js"></script>
-    <script src="/js/hotjar.js"></script>
+		<script src="/js/hotjar.js"></script>
+		<script src="/js/gif-control.js"></script>
+		<script src="/js/works.js"></script>
 </head>
 
 <body>
@@ -67,7 +69,7 @@
 						<div class="branding-line" style="background-color: #86754D;"></div>
 						<h1>星宇航空<br>員工考核系統</h1>
 						<p class="desc">星宇航空內部使用的考核系統，原先只有試用期考核的功能，而年度考核皆由人資單位人工處理，包含製作 Excel 考核表、回收考核表、統計考核結果、發送 Email 通知等。</p>
-						<p class="desc">因應員工數快速上升，考核系統欲將年度考核功能納入開發規劃，連讓考核過程系統化、數位化，減少各單位的人力負擔。而試用考核功能也一併做改版。</p>
+						<p class="desc">因應員工數快速上升，考核系統欲將年度考核功能納入開發規劃，讓年度考核過程系統化、數位化，減少人資的人力負擔，我也透過設計讓介面和流程簡單易懂，藉此減少員工和人資單位的來回溝通。</p>
 					</div>
 				</div>
 				<div class="col-lg-7 col-xl-6 offset-xl-1">
@@ -95,7 +97,7 @@
 					<div class="content">
 						<h2>我負責的項目</h2>
 						<ul>
-							<li>定義考核系統的 Sitemap</li>
+							<li>重新定義整個考核系統的 Sitemap</li>
 							<li>繪製年度考核流程的 Flow chart</li>
 							<li>設計所有功能介面</li>
 							<li>製作年度考核流程的 Prototype</li>
@@ -141,59 +143,105 @@
 					</div>
 				</div>
 			</div>
-			<div class="flow-diagram">
-				<div class="row align-items-end">
-					<div class="col">
-						<div class="text">Planing</div>
-					</div>
-					<div class="col">
-						<div class="text">Spec writing</div>
-					</div>
-					<div class="col">
-						<div class="text">Flow Chart</div>
-					</div>
-					<div class="col">
-						<div class="text">Mockup</div>
-					</div>
-					<div class="col">
-						<div class="text">HTML/CSS</div>
-					</div>
-					<div class="col">
-						<div class="text">Develop</div>
-					</div>
-					<div class="col">
-						<div class="text">User Acceptance Test</div>
-					</div>
-					<div class="col">
-						<div class="text">Launch!</div>
-					</div>
-					<div class="col">
-						<div class="text">Review</div>
+			<div class="content">
+				<div class="flow-diagram">
+					<div class="row align-items-end">
+						<div class="col">
+							<div class="text">Planing</div>
+						</div>
+						<div class="col">
+							<div class="text">Spec writing</div>
+						</div>
+						<div class="col">
+							<div class="text">Flow Chart</div>
+						</div>
+						<div class="col">
+							<div class="text">Mockup</div>
+						</div>
+						<div class="col">
+							<div class="text">HTML/CSS</div>
+						</div>
+						<div class="col">
+							<div class="text">Develop</div>
+						</div>
+						<div class="col">
+							<div class="text">User Acceptance Test</div>
+						</div>
+						<div class="col">
+							<div class="text">Launch!</div>
+						</div>
+						<div class="col">
+							<div class="text">Review</div>
+						</div>
 					</div>
 				</div>
 			</div>
+			<div class="content mb-0">
+				<h2>專案目標</h2>
+				<ul>
+					<li>新增年度考核流程到考核系統中</li>
+					<li>試用考核介面的視覺優化</li>
+				</ul>
+			</div>
 		</div>
 	</section>
-	<section>
+	<section class="bg-light">
 		<div class="container">
-			<h2>我們遇到的問題以及解決方法</h2>
+			<h2 class="text-center">我做了什麼</h2>
 
 			<section>
-				<div class="row align-items-center">
+				<section class="row align-items-center">
 					<div class="col-md-5">
 						<div class="content mb-0">
-							<h3>1. 改善首頁不流暢、複雜的搜尋體驗</h3>
-							<p class="desc text-grey">舊版的搜尋功能和行銷 Banner 疊在一起，且使用按鈕呈現而不是文字框，搜尋功能不夠明確。另外，首頁的功能主要是希望使用者瀏覽城市和商品，但點擊搜尋鈕後搜尋視圖佔據全版面，中斷使用者的瀏覽，且城市選單操作方式不友善，步驟過於繁瑣。</p>
+							<h3>1. 重新定義考核系統的 Sitemap</h3>
+							<p class="desc text-grey">先前的資訊架構只考慮到試用考核，因此在「HR Dashboard」的兩個子層是「試用考核列表」以及「設定」，而設定包含試用考核設定和系統設定。年度考核功能加入後，HR dashboard 也需要新增年度考核的功能，若直接套入這個架構，會造成資訊層級不夠明確。</p>
+							<p class="desc text-grey">另外，HR 同仁在做設定時，通常一次只會專注在其中一個功能，例如年度考核一年設定兩次、試用考核較少異動，系統設定不規律但也不頻繁，且三者通常不會需要同時操作，所以我根據這個情境做了一些調整。</p>
 						</div>
 					</div>
 					<div class="col-md-7">
-						<div class="frame-desktop">
-							<img class="frame-content" src="/img/work/kk_web_old_home.gif" alt="">
-						</div>
+						<img class="img-fluid" src="/img/work/epad_sitemap_old.png" alt="">
+						<div class="img-caption">
+							<i>△</i>
+							舊版 sitemap
+						</p>
 					</div>
 				</div>
 			</section>
 
+			<section>
+				<div class="row">
+					<div class="col-md-6 mx-auto">
+						<div class="content">
+							<h4>調整後：功能擴大且結構清晰的考核系統</h4>
+							<p class="desc text-grey">我把原本的「HR Dashboard」分成三個次頁：「試用考核設定」、「年度考核設定」以及「系統設定」，讓 HR 同仁可以更專注在其中一個功能設定。</p>
+						</div>
+					</div>
+				</div>
+				<img class="img-fluid" src="/img/work/epad_sitemap_new.png" alt="">
+				<div class="img-caption">
+					<i>△</i>
+					重新規劃後的 sitemap，綠色代表新的頁面
+				</div>
+			</section>
+
+			<section>
+				<div class="row">
+					<div class="col-md-8 mx-auto">
+						<div class="frame-desktop">
+							<img class="frame-content" src="/img/work/epad_sitemap_mockup.gif" alt="">
+						</div>
+						<div class="img-caption">
+							<i>△</i>
+							根據 Sitemap 設計的畫面
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</section>
+
+	<section class="bg-light">
+		<div class="container">
 			<section>
 				<div class="row align-items-center">
 					<div class="col-md-6 col-lg-4 order-md-last">

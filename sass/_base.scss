@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    color: #444;
+    color: rgba(0, 0, 0, .8);
     font-family: 'Avenir', 'Noto Sans TC', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-size: 1.6rem;
     line-height: 1.7;
@@ -14,10 +14,34 @@ body {
 }
 
 a {
-    color: rgb(89, 125, 158);
+    color: $c-primary-dark;
+
+    &:hover {
+        color: darken($c-primary-dark, 20%);
+    }
 }
 
 img {
     user-select: none;
     pointer-events: none;
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+h5 {
+    font-size: 1.6rem;
 }

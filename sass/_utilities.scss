@@ -7,6 +7,26 @@
 	text-align: center;
 }
 
+.text-right {
+	text-align: right;
+}
+
 .text-grey {
-	color: #666;
+	color: rgba(0, 0, 0, .64);
+}
+
+.text-grey-light {
+	color: rgba(0, 0, 0, .48)
+}
+
+.text-xs {
+	font-size: 12px;
+}
+
+.text-sm {
+	font-size: 14px;
+}
+
+.bg-light {
+	background-color: #fafafa;
 }

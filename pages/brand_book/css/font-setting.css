@@ -1,0 +1,37 @@
+html {
+  font-size: 10px; /*For definition of basic 1 rem = 10px*/    
+  }
+body {
+font-size: 1.4rem;
+line-height: 1.7;
+font-weight: 400;
+letter-spacing: 0.5px;
+color: #333;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+[lang^="zh-hant"] body,
+[lang^="zh-hant-hk"] body {
+  font-family: 'Noto Sans TC', '微软雅黑', 'Microsoft YaHei', sans-serif !important;
+}
+
+[lang^="zh-hans"] body {
+  font-family: 'Noto Sans SC', '微软雅黑', 'Microsoft YaHei', sans-serif !important;
+}
+
+[lang^="ja"] body {
+  font-family: 'Noto Sans JP', 'MS PGothic', 'MS Gothic', 'ＭＳ ゴシック', sans-serif !important;
+}
+
+[lang^="ko"] body {
+  font-family: 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', 'dotum', sans-serif !important;
+}
+
+[lang^="th"] body {
+  font-family: 'Noto Sans Thai', sans-serif !important;
+}
+
+[lang^="vi"] body {
+  font-family: 'Quicksand', sans-serif !important;
+}

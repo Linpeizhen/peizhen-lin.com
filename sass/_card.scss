@@ -1,8 +1,8 @@
 .card {
-    $root: &;
-    border-radius: 0;
-    border: 0;
-    margin-top: 40px;
+	$root: &;
+	border-radius: 0;
+	border: 0;
+	margin-top: 40px;
 	position: relative;
 
 	a {
@@ -11,11 +11,11 @@
 
 	&:hover {
 
-        .img-wrap {
-            >img {
-                top: 20px;
-            }
-        }
+		.img-wrap {
+				>img {
+						top: 20px;
+				}
+		}
 
 	}
 
@@ -70,16 +70,24 @@
 		color: #666;
 		font-weight: 1.4rem;
 		font-weight: bold;
-        text-decoration: none;
+		text-decoration: none;
 
-        .arrow {
-            transition: .3s;
-        }
-    }
+		.arrow {
+			margin-left: 8px;
+			transition: .3s;
+		}
+	}
 
-    &:hover .title .arrow {
-        animation: arrowMove 1s infinite alternate;
-    }
+	.time {
+		color: #999;
+		font-size: 1.4rem;
+		font-style: italic;
+		letter-spacing:1px;
+	}
+
+	&:hover .title .arrow {
+		animation: arrowMove 1s infinite alternate;
+	}
 }
 
 @keyframes arrowMove {

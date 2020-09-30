@@ -303,6 +303,18 @@ ol {
 
 		.owl-dots {
 			text-align: center;
+			right: 0;
+			bottom: -32px;
+		}
+
+		.card {
+			width: 300px;
+		}
+	}
+
+	.more-works-section {
+		.work-carousel-wrap {
+			margin: 0 -15px;
 		}
 	}
 }

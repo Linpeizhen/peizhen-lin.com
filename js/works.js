@@ -10,11 +10,21 @@ $(function() {
   });
 
   $('.more-works-carousel').owlCarousel({
-    items: 3,
     nav: true,
     slideBy: 'page',
     margin: 30,
     smartSpeed: 50,
-    navText: ['<i class="icon-arrow-left"></i>', '<i class="icon-arrow-right"></i>']
+    navText: ['<i class="icon-arrow-left"></i>', '<i class="icon-arrow-right"></i>'],
+    responsive: {
+      0: {
+        items: 1,
+        autoWidth: true,
+        margin: 15,
+        center: true,
+      },
+      767: {
+        items: 3,
+      },
+    }
   });
 });

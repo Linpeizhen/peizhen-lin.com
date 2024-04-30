@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="z-tw">
+
+<head>
+    <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-TT6CDV8');</script>
+	<!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LIN PEI ZHEN</title>
+
+    <meta name="description" content="我是一位 UI 設計師，熱愛 UI 設計這個領域，也重視 UX 設計，執行設計時以「美觀易讀的介面」、「友善的使用者體驗」及「有效地解決根本問題」為目標，致力於美學及易用性的結合。">
+    <meta property="og:description" content="我是一位 UI 設計師，熱愛 UI 設計這個領域，也重視 UX 設計，執行設計時以「美觀易讀的介面」、「友善的使用者體驗」及「有效地解決根本問題」為目標，致力於美學及易用性的結合。">
+    <meta property="og:url" content="https://www.peizhen-lin.com">
+    <meta property="og:site_name" content="LIN PEI ZHEN">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/img/og_img.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="640">
+
+	<link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/vendor/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/css/vendor/bootstrap-grid.min.css">
+
+    <link rel="stylesheet" href="/css/vendor/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/custom.css">
+</head>
+
+<body>
+<div id="app">
+    <header>
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="/">
+                    <img class="logo" src="/img/logo.svg" alt="">
+                </a>
+                <ul class="header-menu">
+                    
+				        </ul>
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="container">
+                <div class="banner-title">
+                    <span>Hello!</span>
+                </div>
+                <div class="banner-title">
+                    <span>My website is under<span class="name">maintenance</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="/js/vendor/vue.js"></script>
+
+<script src="/js/vendor//jquery.js"></script>
+<script src="/js/vendor//bootstrap.min.js"></script>
+<script>
+    $(function () {
+        // Banner animation
+
+        $(window).on('scroll load resize', function () {
+            var scrollTop = $(window).scrollTop();
+            var windowWidth = $(window).width();
+            var windowHeight = $(window).height();
+            var windowBtmScroll = scrollTop + windowHeight;
+            var header = $('header');
+            var bannerHeight = $('.banner').outerHeight();
+
+            $('.banner-title').addClass('active');
+        });
+    });
+
+</script>
+</body>
+
+</html>
